@@ -12,11 +12,11 @@ phone = pw.CharField()
 '''
 
 def submit_sponsor_app():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    position = request.form.get('position')
-    company = request.form.get('company')
-    phone = request.form.get('phone')
+    name = request.json.get('name')
+    email = request.json.get('email')
+    position = request.json.get('position')
+    company = request.json.get('company')
+    phone = request.json.get('phone')
 
     sponsor_app = SponsorApp(
         name=name,
@@ -72,11 +72,11 @@ def update_sponsor_app(id):
             'result': None
         }), 404
 
-    sponsor_app.name = request.form.get('name')
-    sponsor_app.email = request.form.get('email')
-    sponsor_app.position = request.form.get('position')
-    sponsor_app.company = request.form.get('company')
-    sponsor_app.phone = request.form.get('phone')
+    sponsor_app.name = request.json.get('name')
+    sponsor_app.email = request.json.get('email')
+    sponsor_app.position = request.json.get('position')
+    sponsor_app.company = request.json.get('company')
+    sponsor_app.phone = request.json.get('phone')
     sponsor_app.save()
 
     return jsonify({

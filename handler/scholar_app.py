@@ -5,10 +5,10 @@ from middleware.auth import AuthMiddleware
 
 
 def submit_scholar_app():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    university = request.form.get('university')
-    address = request.form.get('address')
+    name = request.json.get('name')
+    email = request.json.get('email')
+    university = request.json.get('university')
+    address = request.json.get('address')
 
     scholar_app = ScholarApp(
         name=name,
@@ -63,10 +63,10 @@ def update_scholar_app(id):
             'result': None
         }), 404
 
-    scholar_app.name = request.form.get('name')
-    scholar_app.email = request.form.get('email')
-    scholar_app.university = request.form.get('university')
-    scholar_app.address = request.form.get('address')
+    scholar_app.name = request.json.get('name')
+    scholar_app.email = request.json.get('email')
+    scholar_app.university = request.json.get('university')
+    scholar_app.address = request.json.get('address')
     scholar_app.save()
 
     return jsonify({

@@ -36,12 +36,12 @@ def update_scholar(id):
             'result': None
         }), 404
 
-    scholar.name = request.form.get('name')
-    scholar.university = request.form.get('university')
-    scholar.description = request.form.get('description')
-    scholar.image = request.form.get('image')
-    scholar.cv = request.form.get('cv')
-    scholar.linkedin = request.form.get('linkedin')
+    scholar.name = request.json.get('name')
+    scholar.university = request.json.get('university')
+    scholar.description = request.json.get('description')
+    scholar.image = request.json.get('image')
+    scholar.cv = request.json.get('cv')
+    scholar.linkedin = request.json.get('linkedin')
     scholar.save()
 
     return jsonify({
