@@ -4,9 +4,11 @@ from handler.sponsor_app import routes as sponsor_app_routes
 
 from core.router import Router
 from flask import Flask
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 router = Router(app)
 
 router.get('/', lambda: 'Hello World!')

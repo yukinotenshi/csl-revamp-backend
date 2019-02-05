@@ -31,7 +31,7 @@ def submit_sponsor_app():
     except Exception as e:
         return jsonify({
             'message': 'ERROR',
-            'result': e
+            'result': str(e)
         }), 404
 
     return jsonify({
