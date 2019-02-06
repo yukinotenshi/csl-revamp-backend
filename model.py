@@ -21,6 +21,7 @@ class Scholar(BaseModel):
     university = pw.CharField()
     description = pw.TextField()
     image = pw.CharField()
+    batch = pw.CharField()
     cv = pw.CharField(null=True)
     linkedin = pw.CharField(null=True)
 

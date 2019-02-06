@@ -40,6 +40,7 @@ def update_scholar(id):
     scholar.university = request.json.get('university')
     scholar.description = request.json.get('description')
     scholar.image = request.json.get('image')
+    scholar.batch = request.json.get('batch')
     scholar.cv = request.json.get('cv')
     scholar.linkedin = request.json.get('linkedin')
     scholar.save()
