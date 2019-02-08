@@ -28,6 +28,7 @@ class Scholar(BaseModel):
 
 class Board(BaseModel):
     name = pw.CharField()
+    image = pw.CharField()
     position = pw.CharField()
     description = pw.CharField()
     linkedin = pw.CharField()
@@ -35,7 +36,6 @@ class Board(BaseModel):
 
 class ScholarApp(BaseModel):
     name = pw.CharField()
-    image = pw.CharField()
     email = pw.CharField()
     address = pw.CharField()
     university = pw.CharField()
